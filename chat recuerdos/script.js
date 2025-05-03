@@ -20,7 +20,7 @@ const mensajes = [
       texto:
         "Recuerdo nuestro primera foto juntos. Fue el 3 de Julio de 2020, un recuerdo para toda la vida. 👀",
       tipo: "received",
-      imagen: "Imagenes/Viaje.jpg",
+      imagen: "https://raw.githubusercontent.com/JuanLeonI/FCC/main/chat%20recuerdos/imagenes/Viaje.jpg",
     },
     {
       texto:
