@@ -1,0 +1,71 @@
+body {
+    font-family: "DM Serif Text", sans-serif;
+    text-align: center;
+    background-color: #ffe6e6;
+    margin: 0;
+    padding: 20px;
+    
+}
+
+h1 {
+    color: #f4163f;
+}
+
+.proyectos {
+    list-style: none;
+    padding: 0;
+}
+
+.proyectos li {
+    margin: 50px 0px;
+}
+
+.proyectos a {
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    background: #ff4d6d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.proyectos a:hover {
+    background: #f4163f;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff5252;
+}
+.music-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 107, 107, 0.9);
+    padding: 12px;
+    border-radius: 50px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+  
+  .music-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
