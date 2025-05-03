@@ -68,40 +68,13 @@ contenedor.addEventListener("click", () => {
     ElementoMensaje.classList.add("abrir-mensaje");
   }, 700);
 });
-// Botón Volver
-document.getElementById("Volver").addEventListener("click", function(e) {
-  e.preventDefault();
-  window.location.href = "../index.html";
-});
-// Control de música GLOBAL (agrega al inicio del archivo)
-const musica = document.getElementById('musicaFondo');
-
-function toggleMusic() {
-  if (musica.paused) {
-    musica.play();
-    document.querySelector('.music-controls i').className = 'bx bx-pause';
-  } else {
-    musica.pause();
-    document.querySelector('.music-controls i').className = 'bx bx-play';
-  }
-}
-
-function changeVolume(vol) {
-  musica.volume = vol;
-}
 
 // Iniciar música al abrir la carta (opcional)
 document.addEventListener('DOMContentLoaded', function() {
   musica.play().catch(e => console.log("Autoplay bloqueado: ", e));
   document.querySelector('.music-controls i').className = 'bx bx-pause';
 });
-// En tu JS de cartas, agregar:
-document.body.addEventListener('click', function initAudio() {
-  musica.play().then(() => {
-    document.querySelector('.music-controls i').className = 'bx bx-pause';
-  });
-  document.body.removeEventListener('click', initAudio);
-}, { once: true });
+
 // Control del botón Volver (opcional - solo si el enlace no funciona)
 document.getElementById('volver-btn').addEventListener('click', function(e) {
     e.preventDefault();

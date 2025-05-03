@@ -84,24 +84,7 @@ const mensajes = [
   document.getElementById('volver-btn').addEventListener('click', function(e) {
     e.preventDefault();
     window.location.href = "../index.html";
-  });
-  // Control de música GLOBAL (agrega al inicio del archivo)
-  const musica = document.getElementById('musicaFondo');
-  
-  function toggleMusic() {
-    if (musica.paused) {
-      musica.play();
-      document.querySelector('.music-controls i').className = 'bx bx-pause';
-    } else {
-      musica.pause();
-      document.querySelector('.music-controls i').className = 'bx bx-play';
-    }
-  }
-  
-  function changeVolume(vol) {
-    musica.volume = vol;
-  }
-  
+  });  
   // Iniciar música al abrir la carta (opcional)
   document.addEventListener('DOMContentLoaded', function() {
     musica.play().catch(e => console.log("Autoplay bloqueado: ", e));

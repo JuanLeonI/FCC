@@ -15,57 +15,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Cristal 💛</title>
-    <script>
-      // Controlador de música global MEJORADO
-      document.addEventListener('DOMContentLoaded', function() {
-        const musica = document.getElementById('musicaFondo');
-        musica.volume = 0.5; // Volumen inicial
-        
-        // Guardar estado al salir de la página
-        window.addEventListener('beforeunload', function() {
-          sessionStorage.setItem('musicaPlaying', !musica.paused);
-          sessionStorage.setItem('musicaVolume', musica.volume);
-          sessionStorage.setItem('musicaCurrentTime', musica.currentTime);
-        });
-        
-        // Función global para play/pause
-        window.toggleMusic = function() {
-          if (musica.paused) {
-            musica.play()
-              .then(() => {
-                document.querySelector('.music-controls i').className = 'bx bx-pause';
-                sessionStorage.setItem('musicaPlaying', true);
-              })
-              .catch(e => {
-                alert("Por favor toca cualquier parte de la página primero para activar la música");
-              });
-          } else {
-            musica.pause();
-            document.querySelector('.music-controls i').className = 'bx bx-play';
-            sessionStorage.setItem('musicaPlaying', false);
-          }
-        };
-        
-        // Función global para volumen
-        window.changeVolume = function(vol) {
-          musica.volume = vol;
-          sessionStorage.setItem('musicaVolume', vol);
-        };
-        
-        // Activar al primer click (requerido para móviles)
-        document.body.addEventListener('click', function initAudio() {
-          musica.play()
-            .then(() => {
-              document.querySelector('.music-controls i').className = 'bx bx-pause';
-              sessionStorage.setItem('musicaPlaying', true);
-            })
-            .catch(e => console.log("Autoplay bloqueado:", e));
-          document.body.removeEventListener('click', initAudio);
-        }, { once: true });
-      });
-    </script>
 </head>
-
 <body>
     <h1>¡Feliz Cumpleaños Criss! 💛</h1>
     
@@ -73,18 +23,5 @@
       <li><a href="./carta de cum/index.html">Carta De Cumpleaños</a></li>
       <li><a href="./chat recuerdos/index.html">Chat de Recuerdos</a></li>
     </ul>
-
-    <!-- Reproductor de audio -->
-    <audio loop id="musicaFondo" style="display:none;">
-      <source src="./Audio/Desvelado.mp3" type="audio/mpeg">
-      Tu navegador no soporta audio HTML5
-    </audio>
-
-    <!-- Controles de música flotantes -->
-    <div class="music-controls">
-      <button onclick="toggleMusic()"><i class='bx bx-play'></i></button>
-      <span class="song-title">Desvelado...</span>
-      <input type="range" oninput="changeVolume(this.value)" min="0" max="1" step="0.1" value="0.5">
-    </div>
 </body>
 </html>
